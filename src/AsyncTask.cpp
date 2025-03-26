@@ -24,7 +24,7 @@ unsigned int AsyncTask::addTask(Callback callback, TaskMode mode, unsigned long 
   newTask->id = nextId++;  // Assign and increment the ID
   newTask->callback = callback;
   newTask->mode = mode;
-  newTask->lastRun = 0;
+  newTask->lastRun = millis();
   newTask->interval = interval;
   newTask->next = nullptr;
   if (this->taskList ==
